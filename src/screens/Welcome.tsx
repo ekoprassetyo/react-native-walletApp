@@ -5,10 +5,13 @@ import {colors} from '../config/colors';
 import BigText from '../components/Texts/BigText';
 
 import background from '../assets/bgs/background_v1.png';
+import logo from '../assets/e-wallet-logo.png';
+
 import RegularText from '../components/Texts/RegularText';
 import RegularButton from '../components/Buttons/RegularButton';
-import { StackScreenProps } from '@react-navigation/stack';
-import { RootParamList } from '../navigation/RootNavigation';
+import {StackScreenProps} from '@react-navigation/stack';
+import {RootParamList} from '../navigation/RootNavigation';
+import {View} from 'react-native';
 
 type Props = StackScreenProps<RootParamList, 'Welcome'>;
 
@@ -18,6 +21,15 @@ const WelcomeContainer = styled(Container)`
   justify-content: space-between;
   width: 100%;
   height: 100%;
+`;
+
+const LogoImage = styled.Image`
+  width: 50%;
+  height: 90%;
+  background-color: ${colors.tertiary};
+  border-radius: 45px;
+  resize-mode: stretch;
+  background-size: cover;
 `;
 
 const TopImage = styled.Image`
@@ -39,20 +51,31 @@ const BottomSection = styled.View`
   flex: 1;
 `;
 
-const Welcome: FC<Props> = ({ navigation }) => {
+const Welcome: FC<Props> = ({navigation}) => {
   return (
     <WelcomeContainer>
       <TopSection>
         <TopImage source={background} />
       </TopSection>
       <BottomSection>
-        <BigText textStyle={{marginBottom: 25, width: '70%'}}>
-          Best way to track your money.
-        </BigText>
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'flex-start',
+            width: '100%',
+            
+          }}>
+          <BigText textStyle={{marginBottom: 25, width: '50%'}}>
+            Best way to track your money.
+          </BigText>
+          <LogoImage source={logo} />
+        </View>
         <RegularText textStyle={{marginBottom: 50, width: '100%'}}>
           We help you to manage your money and track your expenses.
         </RegularText>
-        <RegularButton onPress={() => navigation.navigate("Home")} textStyle={{fontWeight: 'bold'}}>
+        <RegularButton
+          onPress={() => navigation.navigate('Home')}
+          textStyle={{fontWeight: 'bold'}}>
           Get Started
         </RegularButton>
       </BottomSection>

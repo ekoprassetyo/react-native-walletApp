@@ -8,10 +8,13 @@ import Profile from '../components/Header/Profile';
 
 import Avatar from '../assets/avi/avatar.png';
 import Greeting from '../components/Header/Greeting';
+import { CardProps } from '../components/Cards/types';
+import Balance from '../screens/Balance';
 
 export type RootParamList = {
   Welcome: undefined;
   Home: undefined;
+  Balance: CardProps;
 };
 
 const Stack = createStackNavigator<RootParamList>();
@@ -57,14 +60,15 @@ const RootNavigation: FC = () => {
           options={{
             headerTitle: (props) => (
               <Greeting
-                mainText="Hey Jude"
-                subText="Dont make it bad"
+                mainText="Hello Guest"
+                subText="Welcome Back"
                 {...props}
               />
             ),
             headerLeft: () => null,
           }}
         />
+        <Stack.Screen name="Balance" component={Balance} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -12,6 +12,8 @@ import logo2 from '../assets/cards/visa_white.png'
 import potrait1 from '../assets/portraits/1.jpg'
 import potrait2 from '../assets/portraits/2.jpg'
 import potrait3 from '../assets/portraits/3.jpg'
+import TransactionSection from '../components/Transactions/TransactionSection';
+import SendMoneySection from '../components/SendMoney/SendMoneySection';
 
 
 export type Props = NativeStackScreenProps<RootParamList, "Home">;
@@ -49,21 +51,21 @@ const data = [
 const transactions = [
     {
         id: 1,
-        amount: "-₹15000",
+        amount: "-$ 15000",
         date: "12/12/2020",
         title: "Travel",
-        subtitle: "Air India",
+        subtitle: "Garuda Indonesia",
         art: {
-            background: colors.primary,
+            background: colors.accent,
             icon: "airplane",
         },
     },
     {
         id: 2,
-        amount: "-₹400",
+        amount: "-$ 400",
         date: "12/12/2020",
         title: "Taxi",
-        subtitle: "Uber",
+        subtitle: "Blue Bird",
         art: {
             background: colors.tertiary,
             icon: "car",
@@ -71,12 +73,12 @@ const transactions = [
     },
     {
         id: 3,
-        amount: "-₹1000",
+        amount: "-$ 1000",
         date: "12/12/2020",
         title: "Shopping",
-        subtitle: "Amazon",
+        subtitle: "Shopee",
         art: {
-            background: colors.accent,
+            background: colors.primary,
             icon: "cart",
         },
     },
@@ -85,21 +87,21 @@ const transactions = [
 const sendMoney = [
     {
         id: 1,
-        amount: "₹1000",
+        amount: "$ 1000",
         name: "John Doe",
         background: colors.tertiary,
         image: potrait1,
     },
     {
         id: 2,
-        amount: "₹2000",
+        amount: "$ 2000",
         name: "Alex Doe",
         background: colors.accent,
         image: potrait2,
     },
     {
         id: 3,
-        amount: "₹3000",
+        amount: "$ 3000",
         name: "Steve Doe",
         background: colors.primary,
         image: potrait3,
@@ -111,6 +113,8 @@ const Home: FC<Props> = ({ navigation }) => {
     return (
         <HomeContainer>
            <CardSection data={data} />
+           <TransactionSection data={transactions} />
+           <SendMoneySection data={sendMoney} />
         </HomeContainer>
     )
 }

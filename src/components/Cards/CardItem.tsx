@@ -12,10 +12,10 @@ import background from '../../assets/bgs/background_transparent.png';
 import {Props as HomeProps} from '../../screens/Home';
 
 const CardBackground = styled.ImageBackground`
-  max-height: 25%;
+  max-height: 85%;
   width: ${ScreenWidth * 0.67}px;
   resize-mode: cover;
-  background-color: ${colors.primary};
+  background-color: ${colors.tertiary};
   border-radius: 25px;
   margin-right: 25px;
   overflow: hidden;
@@ -48,34 +48,38 @@ const Logo = styled.Image`
   flex: 1;
 `;
 
-const CardItem: FC<CardProps> = (props) => {
+const CardItem: FC<CardProps> = props => {
   const navigation = useNavigation<HomeProps['navigation']>();
 
   const handlePress = () => {
-    navigation.navigate('Welcome');
+    navigation.navigate('Balance', {...props});
   };
 
   return (
-    <CardBackground source={background}>
-      <CardTouchable underlayColor={colors.secondary} onPress={handlePress}>
-        <TouchableView>
-          <CardRow>
-            <RegularText textStyle={{color: colors.graylight}}>{props.accountNo}</RegularText>
-          </CardRow>
-          <CardRow>
-            <View style={{flex: 3}}>
-              <SmallText textStyle={{color: colors.graylight}}>
-                Account Balance
-              </SmallText>
+    <>
+      <CardBackground source={background}>
+        <CardTouchable underlayColor={colors.secondary} onPress={handlePress}>
+          <TouchableView>
+            <CardRow>
               <RegularText textStyle={{color: colors.graylight}}>
-                $ {props.balance}
+                {props.accountNo}
               </RegularText>
-            </View>
-            <Logo source={props.logo} />
-          </CardRow>
-        </TouchableView>
-      </CardTouchable>
-    </CardBackground>
+            </CardRow>
+            <CardRow>
+              <View style={{flex: 3}}>
+                <SmallText textStyle={{color: colors.graylight}}>
+                  Account Balance
+                </SmallText>
+                <RegularText textStyle={{color: colors.graylight}}>
+                  $ {props.balance}
+                </RegularText>
+              </View>
+              <Logo source={props.logo} />
+            </CardRow>
+          </TouchableView>
+        </CardTouchable>
+      </CardBackground>
+    </>
   );
 };
 

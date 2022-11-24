@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import styled from 'styled-components/native';
 import CardItem from './CardItem';
-import { CardProps, CardSectionProps } from './types';
+import { CardSectionProps } from './types';
 
 const CardList = styled.FlatList`
     flex: 1;
@@ -16,7 +16,7 @@ const CardSection: FC<CardSectionProps> = ({ data }) => {
         data={data}
         horizontal={true}
         showsHorizontalScrollIndicator={false}
-        contentContainerStyle={{ paddingRight: 50, alignItems: 'center' }}
+        contentContainerStyle={{ paddingRight: 50, alignItems: 'stretch' }}
         keyExtractor={({ id }: any) => id.toString()}
         renderItem={({ item }: any) => <CardItem {...item} />}
         />
