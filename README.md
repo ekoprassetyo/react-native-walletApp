@@ -9,9 +9,15 @@
 ## App Showcase
 
 <div>
-    <img src="https://github.com/ekoprassetyo/react-native-walletApp/blob/master/src/assets/screenshot/Welcome_Page.png" width="250" height="500" alt="1.png"/>
-    <img src="https://github.com/ekoprassetyo/react-native-walletApp/blob/master/src/assets/screenshot/Home_Page.png" height="500" alt="2.png"/>
-    <img src="https://github.com/ekoprassetyo/react-native-walletApp/blob/master/src/assets/screenshot/Balance_Page.png" width="250" height="500" alt="3.png"/>
+    <div margin-end="10px">
+        <img src="https://github.com/ekoprassetyo/react-native-walletApp/blob/master/src/assets/screenshot/Welcome_Page.png" width="250" height="500" alt="1.png"/>
+    </div>
+    <div>
+        <img src="https://github.com/ekoprassetyo/react-native-walletApp/blob/master/src/assets/screenshot/Home_Page.png" height="500" alt="2.png"/>
+    </div>
+    <div>
+        <img src="https://github.com/ekoprassetyo/react-native-walletApp/blob/master/src/assets/screenshot/Balance_Page.png" width="250" height="500" alt="3.png"/>
+    </div>
 </div>
 
 ## Acknowledgements
