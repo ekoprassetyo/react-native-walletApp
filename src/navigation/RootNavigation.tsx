@@ -8,8 +8,9 @@ import Profile from '../components/Header/Profile';
 
 import Avatar from '../assets/avi/avatar.png';
 import Greeting from '../components/Header/Greeting';
-import { CardProps } from '../components/Cards/types';
+import {CardProps} from '../components/Cards/types';
 import Balance from '../screens/Balance';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 export type RootParamList = {
   Welcome: undefined;
@@ -58,7 +59,7 @@ const RootNavigation: FC = () => {
           name="Home"
           component={Home}
           options={{
-            headerTitle: (props) => (
+            headerTitle: props => (
               <Greeting
                 mainText="Hello Guest"
                 subText="Welcome Back"
@@ -68,7 +69,20 @@ const RootNavigation: FC = () => {
             headerLeft: () => null,
           }}
         />
-        <Stack.Screen name="Balance" component={Balance} />
+        <Stack.Screen
+          name="Balance"
+          component={Balance}
+          options={({route}) => ({
+            headerTitle: route?.params?.alias,
+            headerTitleAlign: 'center',
+            headerBackImage: props => (
+              <Icon name="chevron-back" size={25} color={colors.secondary} />
+            ),
+            headerLeftContainerStyle: {
+              paddingLeft: 0,
+            },
+          })}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
