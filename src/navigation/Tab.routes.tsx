@@ -19,7 +19,7 @@ const AppTabRoutes: FC = () => {
       <Screen
         name="RegisterDocumentUpload"
         component={RegisterDocumentUpload}
-        options={{tabBarIcon: () => <Icon name='id-card' size={30} color={colors.black} />}}
+        options={{tabBarIcon: () => <Icon name='id-card' size={30} />}}
       />
     </Navigator>
   );
