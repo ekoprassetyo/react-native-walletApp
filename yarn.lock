@@ -1350,6 +1350,15 @@
   "resolved" "https://registry.npmjs.org/@react-native/polyfills/-/polyfills-2.0.0.tgz"
   "version" "2.0.0"
 
+"@react-navigation/bottom-tabs@^6.4.1":
+  "integrity" "sha512-b12o0aVe+A9bUVP31kQLVcZ5l4Inm/7XhpSS5FvwhoI9L2iwofK1tt98uEQd79NIAklfui+IqRqr2X6XKkygbA=="
+  "resolved" "https://registry.npmjs.org/@react-navigation/bottom-tabs/-/bottom-tabs-6.4.1.tgz"
+  "version" "6.4.1"
+  dependencies:
+    "@react-navigation/elements" "^1.3.7"
+    "color" "^4.2.3"
+    "warn-once" "^0.1.0"
+
 "@react-navigation/core@^6.4.1":
   "integrity" "sha512-M1rTS+qaw84ZItvObwFTjuvXfrJRnXL2uJJeiDVwSvu7/30Wp6bkL3/MfLUEA6I4CzJhL74iRSfCKSVe7kVhlw=="
   "resolved" "https://registry.npmjs.org/@react-navigation/core/-/core-6.4.1.tgz"

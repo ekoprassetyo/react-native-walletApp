@@ -13,7 +13,7 @@ import Balance from '../screens/Balance';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { useColorScheme } from 'react-native';
 import LoginPage from '../screens/LoginPage';
-import RegisterPage from '../screens/RegisterPage';
+import AppTabRoutes from './Tab.routes';
 
 export type RootParamList = {
   Welcome: undefined;
@@ -65,7 +65,7 @@ const RootNavigation: FC = () => {
           options={{headerShown: false}}
         />
         <Screen name='LoginPage' component={LoginPage} options={{headerShown: false}} />
-        <Screen name='RegisterPage' component={RegisterPage} options={{headerShown: false}} />
+        <Screen name='RegisterPage' component={AppTabRoutes} options={{headerShown: false}} />
         <Screen
           name="Home"
           component={Home}

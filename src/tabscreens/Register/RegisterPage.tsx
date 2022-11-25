@@ -1,13 +1,9 @@
 import React, {FC, useState} from 'react';
 import styled from 'styled-components/native';
-import {colors} from '../config/colors';
-import login from '../assets/loginImage.png';
-import RegularButton from '../components/Buttons/RegularButton';
-import BigText from '../components/Texts/BigText';
-import {NativeStackScreenProps} from '@react-navigation/native-stack/lib/typescript/src/types';
-import { RootParamList } from '../navigation/RootNavigation';
-
-export type Props = NativeStackScreenProps<RootParamList, 'RegisterPage'>;
+import login from '../../assets/loginImage.png';
+import { colors } from '../../config/colors';
+import BigText from '../../components/Texts/BigText';
+import RegularButton from '../../components/Buttons/RegularButton';
 
 const RegisterPageBackground = styled.View`
     background-color: ${colors.graylight}
