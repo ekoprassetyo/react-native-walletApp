@@ -1,10 +1,13 @@
-import React, {type PropsWithChildren} from 'react';
+import React, {FC} from 'react';
 import RootNavigation from './src/navigation/RootNavigation';
-// import Welcome from './src/screens/Welcome';
+import { ThemeProvider, useTheme } from 'styled-components';
+import { useColorScheme } from 'react-native';
+import { darkTheme, lightTheme } from './src/config/colors';
 
-const App = () => {
+
+const App: FC = () => {
   return (
-    <RootNavigation />
+      <RootNavigation />
   )
 };
 

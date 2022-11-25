@@ -1,9 +1,9 @@
 import React, {FC} from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+import { NavigationContainer, useTheme, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import Welcome from '../screens/Welcome';
 import Home from '../screens/Home';
-import {colors} from '../config/colors';
+// import {colors} from '../config/colors';
 import Profile from '../components/Header/Profile';
 
 import Avatar from '../assets/avi/avatar.png';
@@ -11,29 +11,36 @@ import Greeting from '../components/Header/Greeting';
 import {CardProps} from '../components/Cards/types';
 import Balance from '../screens/Balance';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { useColorScheme } from 'react-native';
+import LoginPage from '../screens/LoginPage';
 
 export type RootParamList = {
   Welcome: undefined;
   Home: undefined;
   Balance: CardProps;
+  LoginPage: undefined;
 };
 
-const Stack = createStackNavigator<RootParamList>();
+
+const {Navigator, Screen} = createStackNavigator<RootParamList>();
 
 const RootNavigation: FC = () => {
+  const { colors } = useTheme()
+  const scheme = useColorScheme();
+
   return (
-    <NavigationContainer>
-      <Stack.Navigator
+    <NavigationContainer theme={scheme === 'dark' ? DarkTheme : DefaultTheme }>
+      <Navigator
         screenOptions={{
           headerStyle: {
-            backgroundColor: colors.graylight,
+            backgroundColor: colors.background,
             borderBottomWidth: 0,
             shadowColor: 'transparent',
             shadowOpacity: 0,
             elevation: 0,
             height: 120,
           },
-          headerTintColor: colors.secondary,
+          headerTintColor: colors.text,
           headerRightContainerStyle: {
             paddingRight: 20,
           },
@@ -44,18 +51,19 @@ const RootNavigation: FC = () => {
             <Profile
               image={Avatar}
               imageContainerStyle={{
-                backgroundColor: colors.tertiary,
+                backgroundColor: colors.border,
               }}
             />
           ),
         }}
         initialRouteName="Welcome">
-        <Stack.Screen
+        <Screen
           name="Welcome"
           component={Welcome}
           options={{headerShown: false}}
         />
-        <Stack.Screen
+        <Screen name='LoginPage' component={LoginPage}/>
+        <Screen
           name="Home"
           component={Home}
           options={{
@@ -69,21 +77,21 @@ const RootNavigation: FC = () => {
             headerLeft: () => null,
           }}
         />
-        <Stack.Screen
+        <Screen
           name="Balance"
           component={Balance}
           options={({route}) => ({
             headerTitle: route?.params?.alias,
             headerTitleAlign: 'center',
             headerBackImage: props => (
-              <Icon name="chevron-back" size={25} color={colors.secondary} />
+              <Icon name="chevron-back" size={25} color={colors.text} />
             ),
             headerLeftContainerStyle: {
               paddingLeft: 0,
             },
           })}
         />
-      </Stack.Navigator>
+      </Navigator>
     </NavigationContainer>
   );
 };

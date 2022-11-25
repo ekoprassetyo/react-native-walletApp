@@ -74,7 +74,7 @@ const Welcome: FC<Props> = ({navigation}) => {
           We help you to manage your money and track your expenses.
         </RegularText>
         <RegularButton
-          onPress={() => navigation.navigate('Home')}
+          onPress={() => navigation.navigate('LoginPage')}
           textStyle={{fontWeight: 'bold'}}>
           Get Started
         </RegularButton>

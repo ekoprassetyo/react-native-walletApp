@@ -48,7 +48,7 @@ const Logo = styled.Image`
   flex: 1;
 `;
 
-const CardItem: FC<CardProps> = props => {
+const CardItem: FC<CardProps> = (props) => {
   const navigation = useNavigation<HomeProps['navigation']>();
 
   const handlePress = () => {

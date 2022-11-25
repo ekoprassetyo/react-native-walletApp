@@ -8,3 +8,13 @@ export const colors = {
 	graydark: "#4b5563",
 	accent: "#fbcd77",
 };
+
+export const darkTheme = {
+	background: "#1A1A1A",
+	foreground: "#FAFAFA",
+}
+
+export const lightTheme = {
+	background: "#FAFAFA",
+	foreground: "#1A1A1A",
+}
