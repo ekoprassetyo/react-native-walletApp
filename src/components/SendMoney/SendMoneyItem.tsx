@@ -26,7 +26,7 @@ const SendMoneyItem: FC<SendMoneyProps> = ({
     <SendMoneyItemContainer
       underlayColor={colors.graydark}
       style={{backgroundColor: background}}
-      onPress={() => console.log('Send Money')}>
+      onPress={() => console.log(`Send Money to ${name}`)}>
         <>
             <Profile image={image} imageContainerStyle={{marginBottom: 10}}/>
             <SmallText textStyle={{color: colors.secondary}}>{name}</SmallText>

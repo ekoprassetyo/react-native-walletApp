@@ -1,6 +1,6 @@
 import React, {FC, useState} from 'react';
 import styled from 'styled-components/native';
-import login from '../../assets/loginImage.png';
+import register from '../../assets/regisImage.png';
 import { colors } from '../../config/colors';
 import BigText from '../../components/Texts/BigText';
 import RegularButton from '../../components/Buttons/RegularButton';
@@ -64,7 +64,7 @@ const RegisterPage: FC = () => {
   return (
     <RegisterPageBackground>
       <TopSection>
-        <TopImage source={login} />
+        <TopImage source={register} />
         <BigText textStyle={{color: colors.graydark, marginLeft: 10}}>
           {' '}
           Register{' '}

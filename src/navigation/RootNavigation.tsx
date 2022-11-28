@@ -2,7 +2,6 @@ import React, {FC} from 'react';
 import { NavigationContainer, useTheme, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import Welcome from '../screens/Welcome';
-import Home from '../screens/Home';
 // import {colors} from '../config/colors';
 import Profile from '../components/Header/Profile';
 
@@ -13,7 +12,8 @@ import Balance from '../screens/Balance';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { useColorScheme } from 'react-native';
 import LoginPage from '../screens/LoginPage';
-import AppTabRoutes from './Tab.routes';
+import AppTabRoutesRegister from './Tab.routes.register';
+import AppTabRoutesHome from './Tab.routes.home';
 
 export type RootParamList = {
   Welcome: undefined;
@@ -65,10 +65,10 @@ const RootNavigation: FC = () => {
           options={{headerShown: false}}
         />
         <Screen name='LoginPage' component={LoginPage} options={{headerShown: false}} />
-        <Screen name='RegisterPage' component={AppTabRoutes} options={{headerShown: false}} />
+        <Screen name='RegisterPage' component={AppTabRoutesRegister} options={{headerShown: false}} />
         <Screen
           name="Home"
-          component={Home}
+          component={AppTabRoutesHome}
           options={{
             headerTitle: props => (
               <Greeting

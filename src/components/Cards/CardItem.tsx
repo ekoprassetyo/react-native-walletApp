@@ -9,7 +9,7 @@ import {View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
 import background from '../../assets/bgs/background_transparent.png';
-import {Props as HomeProps} from '../../screens/Home';
+import {Props as HomeProps} from '../../tabscreens/Menu/Home';
 
 const CardBackground = styled.ImageBackground`
   max-height: 85%;
