@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {FlatList, Text, View} from 'react-native';
 import {RenderItemProps, StockObjInfo} from '../../../types/stock';
 import {colors} from '../../../config/colors';
@@ -39,7 +39,7 @@ const timeToDaysMap: timeToDaysMap = {
   ['2Y']: 504,
 };
 
-const ResponsiveStockChart = ({
+const ResponsiveStockChart: FC<ResponsiveStockChartProps> = ({
   StockObjInfo,
   dateMap,
   max,
@@ -47,35 +47,34 @@ const ResponsiveStockChart = ({
   setTimePeriod,
   stockData,
   timePeriod,
-}: ResponsiveStockChartProps) => {
+}) => {
+  const renderItem = ({item}: RenderItemProps) => {
+    const onTextPress = () => {
+      setTimePeriod(item);
+    };
 
-    const renderItem = ({item}: RenderItemProps) => {
-        const onTextPress = () => {
-          setTimePeriod(item);
-        };
-    
-        return (
-          <View
-            style={{
-              backgroundColor:
-                item === timePeriod ? colors.graydark : colors.codGrey,
-              height: 30,
-              width: 50,
-              justifyContent: 'center',
-              display: 'flex',
-              alignContent: 'center',
-              borderRadius: 5,
-              paddingLeft: 12,
-              marginLeft: 5,
-            }}>
-            <Text
-              style={{color: colors.white, fontWeight: 'bold', paddingEnd: 20}}
-              onPress={onTextPress}>
-              {item}
-            </Text>
-          </View>
-        );
-      };
+    return (
+      <View
+        style={{
+          backgroundColor:
+            item === timePeriod ? colors.graydark : colors.codGrey,
+          height: 30,
+          width: 50,
+          justifyContent: 'center',
+          display: 'flex',
+          alignContent: 'center',
+          borderRadius: 5,
+          paddingLeft: 12,
+          marginLeft: 5,
+        }}>
+        <Text
+          style={{color: colors.white, fontWeight: 'bold', paddingEnd: 20}}
+          onPress={onTextPress}>
+          {item}
+        </Text>
+      </View>
+    );
+  };
 
   return (
     <>
@@ -102,9 +101,7 @@ const ResponsiveStockChart = ({
             yDomain={{
               min: Math.floor(parseFloat(min) - 2),
               max: Math.ceil(parseFloat(max) + 2),
-            }}>
-            
-          </Chart>
+            }}></Chart>
         </>
       )}
     </>
