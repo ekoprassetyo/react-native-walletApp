@@ -1,18 +1,29 @@
-import React, {FC} from 'react';
+import React from 'react';
 import styled from 'styled-components/native';
 
-import { colors } from '../../config/colors';
-import { TextProps } from './types';
+import {colors} from '../../config/colors';
+import textStyles from './textStyles';
+import {StyledTextProps, TextProps, MyTextProps, getFont} from './types';
 
 const StyledText = styled.Text`
-    color: ${colors.gray};
-    font-size: 18px;
-    text-align: left;
-    font-family: Lato-Regular;
+  color: ${colors.gray};
+  ${(props: StyledTextProps) => textStyles(props)}
+  font-family: Lato-Regular;
 `;
 
-const RegularText: FC<TextProps> = ({ textStyle, children }) => {
-    return <StyledText style={textStyle}>{children}</StyledText>
-}
+const RegularText = (props: MyTextProps) => {
+  const {bold, weight} = props;
+
+  const font = getFont({
+    isBold: bold || weight === '700',
+    weight: weight ? Number(weight) : 0,
+  });
+
+  return (
+    <StyledText font={font} {...props} onPress={props.onClick}>
+      {props.children}
+    </StyledText>
+  );
+};
 
 export default RegularText;
