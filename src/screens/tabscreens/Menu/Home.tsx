@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import styled from 'styled-components/native';
 import {colors} from '../../../config/colors';
-import {RootParamList} from '../../../navigation/RootNavigation';
+import {RootParamList} from '../../../navigation/StackNavigation';
 import CardSection from '../../../components/Cards/CardSection';
 
 import TransactionSection from '../../../components/Transactions/TransactionSection';

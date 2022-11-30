@@ -10,10 +10,8 @@ import logo from '../../assets/e-wallet-logo.png';
 import RegularText from '../../components/Texts/RegularText';
 import RegularButton from '../../components/Buttons/RegularButton';
 import {StackScreenProps} from '@react-navigation/stack';
-import {RootParamList} from '../../navigation/RootNavigation';
 import {View} from 'react-native';
-
-type Props = StackScreenProps<RootParamList, 'Welcome'>;
+import {useNavigation} from '@react-navigation/native';
 
 const WelcomeContainer = styled(Container)`
   background-color: ${colors.secondary};
@@ -51,7 +49,9 @@ const BottomSection = styled.View`
   flex: 1;
 `;
 
-const Welcome: FC<Props> = ({navigation}) => {
+const Welcome: FC = ({ navigation }: any) => {
+  // const navigation = useNavigation();
+
   return (
     <WelcomeContainer>
       <TopSection>

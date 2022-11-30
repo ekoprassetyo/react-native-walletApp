@@ -6,7 +6,6 @@ import login2 from '../../assets/auth/splash_logo.png';
 import RegularButton from '../../components/Buttons/RegularButton';
 import SmallText from '../../components/Texts/SmallText';
 import {useNavigation} from '@react-navigation/native';
-import {Props as HomeProps} from '../tabscreens/Menu/Home';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import BigText from '../../components/Texts/BigText';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -32,12 +31,6 @@ const InputText = styled.TextInput`
   padding: 10px;
   border-radius: 15px;
 `;
-
-// const TopSection = styled.View`
-//   width: 100%;
-//   max-height: 100%;
-//   flex: 1;
-// `;
 
 const BottomSection = styled.View`
   width: 100%;
@@ -66,7 +59,7 @@ const LoginPage: FC = () => {
     setPassword(password);
   };
 
-  const navigation = useNavigation<HomeProps['navigation']>();
+  const navigation = useNavigation();
 
   console.log(username, 'username');
   console.log(password, 'password');
