@@ -4,6 +4,7 @@ import styled from 'styled-components/native';
 import { colors } from '../../config/colors';
 import RegularText from '../Texts/RegularText';
 import { ButtonProps } from './types';
+import textStyles from '../Texts/textStyles';
 
 const ButtonView = styled.TouchableOpacity`
     background-color: ${colors.primary};
@@ -15,11 +16,14 @@ const ButtonView = styled.TouchableOpacity`
 
 
 const RegularButton: FC<ButtonProps> = ({
-    children, onPress, btnStyle, textStyle
+    btnStyle,
+    children,
+    onPress,
+    textStyle,
 }) => {
     return (
         <ButtonView onPress={onPress} style={btnStyle}>
-			<RegularText textStyle={textStyle}>{children}</RegularText>
+			<RegularText textStyles={textStyle}>{children}</RegularText>
 		</ButtonView>
 	);
 }

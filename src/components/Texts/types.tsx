@@ -15,6 +15,8 @@ export interface TextProps {
   spacing?: string;
   textTransform?: string;
   textDecorationLine?: string;
+  textStyles?: StyleProp<TextStyle>;
+  children?: ReactNode;
 }
 
 export interface FontProps {

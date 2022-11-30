@@ -37,11 +37,11 @@ const SendMoneySection: FC<SendMoneySectionProps> = ({data}) => {
     return (
       <SendMoneySectionBackground>
         <SendMoneyRow>
-          <RegularText textStyle={{color: colors.secondary, fontSize: 20}}>
+          <RegularText textStyles={{color: colors.secondary, fontSize: 20}}>
             Send money to
           </RegularText>
           <TextButton>
-            <SmallText textStyle={{color: colors.tertiary, fontWeight: 'bold'}}>
+            <SmallText textStyles={{color: colors.tertiary, fontWeight: 'bold'}}>
               +Add
             </SmallText>
           </TextButton>

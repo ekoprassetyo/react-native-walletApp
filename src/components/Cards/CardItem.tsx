@@ -48,7 +48,7 @@ const Logo = styled.Image`
   flex: 1;
 `;
 
-const CardItem: FC<CardProps> = (props) => {
+const CardItem: FC<CardProps> = props => {
   const navigation = useNavigation<HomeProps['navigation']>();
 
   const handlePress = () => {
@@ -61,16 +61,16 @@ const CardItem: FC<CardProps> = (props) => {
         <CardTouchable underlayColor={colors.secondary} onPress={handlePress}>
           <TouchableView>
             <CardRow>
-              <RegularText textStyle={{color: colors.graylight}}>
+              <RegularText textStyles={{color: colors.graylight}}>
                 {props.accountNo}
               </RegularText>
             </CardRow>
             <CardRow>
               <View style={{flex: 3}}>
-                <SmallText textStyle={{color: colors.graylight}}>
+                <SmallText textStyles={{color: colors.graylight}}>
                   Account Balance
                 </SmallText>
-                <RegularText textStyle={{color: colors.graylight}}>
+                <RegularText textStyles={{color: colors.graylight}}>
                   $ {props.balance}
                 </RegularText>
               </View>

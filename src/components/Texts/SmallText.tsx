@@ -11,8 +11,8 @@ const StyledText = styled.Text`
     font-family: Lato-Regular;
 `;
 
-const SmallText: FC<TextProps> = ({ textStyle, children }) => {
-    return <StyledText style={textStyle}>{children}</StyledText>
+const SmallText: FC<TextProps> = ({ textStyles, children }) => {
+    return <StyledText style={textStyles}>{children}</StyledText>
 }
 
 export default SmallText;

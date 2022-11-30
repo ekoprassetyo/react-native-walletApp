@@ -65,7 +65,7 @@ const RegisterPage: FC = () => {
     <RegisterPageBackground>
       <TopSection>
         <TopImage source={register} />
-        <BigText textStyle={{color: colors.graydark, marginLeft: 10}}>
+        <BigText textStyles={{color: colors.graydark, marginLeft: 10}}>
           {' '}
           Register{' '}
         </BigText>

@@ -15,8 +15,8 @@ const AmountSectionBackground = styled.View`
 const AmountSection: FC<AmountProps> = ({ balance }) => {
     return (
         <AmountSectionBackground>
-            <SmallText textStyle={{color: colors.secondary, fontSize: 25, marginBottom: 10}}>Total Balance</SmallText>
-            <RegularText textStyle={{color: colors.secondary}}>$ {balance}</RegularText>
+            <SmallText textStyles={{color: colors.secondary, fontSize: 25, marginBottom: 10}}>Total Balance</SmallText>
+            <RegularText textStyles={{color: colors.secondary}}>$ {balance}</RegularText>
         </AmountSectionBackground>
 
     )

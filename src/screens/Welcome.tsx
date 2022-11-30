@@ -65,12 +65,12 @@ const Welcome: FC<Props> = ({navigation}) => {
             width: '100%',
             
           }}>
-          <BigText textStyle={{marginBottom: 25, width: '50%'}}>
+          <BigText textStyles={{marginBottom: 25, width: '50%'}}>
             Best way to track your money.
           </BigText>
           <LogoImage source={logo} />
         </View>
-        <RegularText textStyle={{marginBottom: 50, width: '100%'}}>
+        <RegularText textStyles={{marginBottom: 50, width: '100%'}}>
           We help you to manage your money and track your expenses.
         </RegularText>
         <RegularButton

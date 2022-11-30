@@ -20,7 +20,7 @@ const Greeting: FC<GreetingProps> = ({
   return (
     <StyledView>
       <RegularText
-        textStyle={[
+        textStyles={[
           {
             fontSize: 25,
             color: colors.secondary,
@@ -30,7 +30,7 @@ const Greeting: FC<GreetingProps> = ({
         {mainText}
       </RegularText>
       <SmallText
-        textStyle={[
+        textStyles={[
           {
             marginTop: 5,
             color: colors.graydark,

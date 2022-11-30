@@ -2,11 +2,11 @@ import React, {FC, useState} from 'react';
 import styled from 'styled-components/native';
 import {colors} from '../config/colors';
 import login from '../assets/loginImage.png';
-import login2 from '../assets/auth/splash_logo.png'
+import login2 from '../assets/auth/splash_logo.png';
 import RegularButton from '../components/Buttons/RegularButton';
 import SmallText from '../components/Texts/SmallText';
 import {useNavigation} from '@react-navigation/native';
-import { Props as HomeProps} from '../tabscreens/Menu/Home';
+import {Props as HomeProps} from '../tabscreens/Menu/Home';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import BigText from '../components/Texts/BigText';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -73,17 +73,20 @@ const LoginPage: FC = () => {
 
   return (
     <LoginPageBackground>
-        <TopImage source={login2} />
-        <BigText textStyle={{color: colors.graydark, marginLeft: 10}}>
-          {' '}
-          Login{' '}
-        </BigText>
-        <InputText placeholder="Client Code" onChangeText={handleChangeUsername} />
-        <InputText
-          placeholder="Password"
-          onChangeText={handleChangePassword}
-          secureTextEntry
-        />
+      <TopImage source={login2} />
+      <BigText textStyles={{color: colors.graydark, marginLeft: 10}}>
+        {' '}
+        Login{' '}
+      </BigText>
+      <InputText
+        placeholder="Client Code"
+        onChangeText={handleChangeUsername}
+      />
+      <InputText
+        placeholder="Password"
+        onChangeText={handleChangePassword}
+        secureTextEntry
+      />
       <BottomSection>
         <RegularButton
           btnStyle={{backgroundColor: colors.tertiary}}
@@ -93,11 +96,11 @@ const LoginPage: FC = () => {
         </RegularButton>
         <TouchableOpacity onPress={() => navigation.navigate('RegisterPage')}>
           <SmallText
-            textStyle={{marginLeft: 15, marginTop: 10, color: colors.primary}}>
+            textStyles={{marginLeft: 15, marginTop: 10, color: colors.primary}}>
             Don't have an account ? Click Here for Register Online
           </SmallText>
         </TouchableOpacity>
-        <SmallText textStyle={{marginTop: 30, color: colors.graydark}}>
+        <SmallText textStyles={{marginTop: 30, color: colors.graydark}}>
           {' '}
           Follow our social media for updates{' '}
         </SmallText>

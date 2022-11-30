@@ -42,16 +42,16 @@ const BalanceCard: FC<BalanceCardProps> = ({accountNo, balance, logo}) => {
     <CardBackground source={Background}>
       <TouchableView>
         <CardRow>
-          <RegularText textStyle={{color: colors.white}}>
+          <RegularText textStyles={{color: colors.white}}>
             {accountNo}
           </RegularText>
         </CardRow>
         <CardRow>
           <View style={{flex: 3}}>
-            <SmallText textStyle={{color: colors.graydark, marginBottom: 4}}>
+            <SmallText textStyles={{color: colors.graydark, marginBottom: 4}}>
               Account Balance
             </SmallText>
-            <RegularText textStyle={{color: colors.graydark}}>
+            <RegularText textStyles={{color: colors.graydark}}>
               $ {balance}
             </RegularText>
           </View>

@@ -28,10 +28,10 @@ const TransactionSection: FC<TransactionSectionProps> = ({data}) => {
   return (
     <TransactionSectionBackground>
       <TransactionRow>
-        <RegularText textStyle={{fontSize: 20, color: colors.secondary}}>
+        <RegularText textStyles={{fontSize: 20, color: colors.secondary}}>
           Transactions
         </RegularText>
-        <SmallText textStyle={{color: colors.secondary, fontSize: 16}}> Recent </SmallText>
+        <SmallText textStyles={{color: colors.secondary, fontSize: 16}}> Recent </SmallText>
       </TransactionRow>
       <TransactionList
         data={data}
