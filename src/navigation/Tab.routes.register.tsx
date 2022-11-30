@@ -1,12 +1,12 @@
 import React, {FC} from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import RegisterPage from '../tabscreens/Register/RegisterPage';
-import RegisterDocumentUpload from '../tabscreens/Register/RegisterDocumentUpload';
+import RegisterPage from '../screens/tabscreens/Register/RegisterPage';
+import RegisterDocumentUpload from '../screens/tabscreens/Register/RegisterDocumentUpload';
 import DocumentIcon from 'react-native-vector-icons/FontAwesome';
 import FormIcon from 'react-native-vector-icons/AntDesign';
 import VerificationIcon from 'react-native-vector-icons/MaterialIcons';
 import {colors} from '../config/colors';
-import VerificationPage from '../tabscreens/Register/VerificationPage';
+import VerificationPage from '../screens/tabscreens/Register/VerificationPage';
 
 const {Navigator, Screen} = createBottomTabNavigator();
 

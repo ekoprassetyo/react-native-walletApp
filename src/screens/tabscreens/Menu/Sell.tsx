@@ -1,21 +1,21 @@
 import React, {FC} from 'react';
 import styled from 'styled-components/native';
-import { colors } from '../../config/colors';
+import { colors } from '../../../config/colors';
 import { Text } from 'react-native';
 
-const QuotesContainer = styled.ScrollView`
+const SellContainer = styled.ScrollView`
     flex: 1;
     background-color: ${colors.graylight};
 `;
 
-const Quotes: FC = () => {
+const Sell: FC = () => {
     return (
-        <QuotesContainer>
+        <SellContainer>
             <Text>
-                Quotes Page
+                Sell Page
             </Text>
-        </QuotesContainer>
+        </SellContainer>
     )
 }
 
-export default Quotes;
+export default Sell;

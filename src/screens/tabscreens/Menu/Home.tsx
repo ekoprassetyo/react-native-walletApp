@@ -1,12 +1,12 @@
 import React, {FC} from 'react';
 import styled from 'styled-components/native';
-import {colors} from '../../config/colors';
-import {RootParamList} from '../../navigation/RootNavigation';
-import CardSection from '../../components/Cards/CardSection';
+import {colors} from '../../../config/colors';
+import {RootParamList} from '../../../navigation/RootNavigation';
+import CardSection from '../../../components/Cards/CardSection';
 
-import TransactionSection from '../../components/Transactions/TransactionSection';
-import SendMoneySection from '../../components/SendMoney/SendMoneySection';
-import {data, sendMoney, transactions} from '../../DummyData';
+import TransactionSection from '../../../components/Transactions/TransactionSection';
+import SendMoneySection from '../../../components/SendMoney/SendMoneySection';
+import {data, sendMoney, transactions} from '../../../DummyData';
 import {BottomTabScreenProps} from '@react-navigation/bottom-tabs';
 
 // export type Props = BottomTabScreenProps<RootParamList, "Home">;

@@ -1,9 +1,9 @@
 import React, {FC, useState} from 'react';
 import styled from 'styled-components/native';
-import register from '../../assets/regisImage.png';
-import { colors } from '../../config/colors';
-import BigText from '../../components/Texts/BigText';
-import RegularButton from '../../components/Buttons/RegularButton';
+import register from '../../../assets/regisImage.png';
+import { colors } from '../../../config/colors';
+import BigText from '../../../components/Texts/BigText';
+import RegularButton from '../../../components/Buttons/RegularButton';
 
 const RegisterPageBackground = styled.View`
     background-color: ${colors.graylight}
@@ -14,7 +14,7 @@ const RegisterPageBackground = styled.View`
 
 const TopImage = styled.Image`
   width: 100%;
-  height: 100%;
+  height: 100%;r
   background-size: cover;
 `;
 

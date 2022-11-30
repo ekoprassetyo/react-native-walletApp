@@ -1,13 +1,13 @@
 import React, {FC} from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import RegisterPage from '../tabscreens/Register/RegisterPage';
+import RegisterPage from '../screens/tabscreens/Register/RegisterPage';
 import {colors} from '../config/colors';
 import HomeIcon from 'react-native-vector-icons/AntDesign'
-import Home from '../tabscreens/Menu/Home';
-import Quotes from '../tabscreens/Menu/Quotes';
-import Buy from '../tabscreens/Menu/Buy';
-import Sell from '../tabscreens/Menu/Sell';
-import BalAndPos from '../tabscreens/Menu/BalAndPos';
+import Home from '../screens/tabscreens/Menu/Home';
+import Quotes from '../screens/tabscreens/Menu/Quotes';
+import Buy from '../screens/tabscreens/Menu/Buy';
+import Sell from '../screens/tabscreens/Menu/Sell';
+import BalAndPos from '../screens/tabscreens/Menu/BalAndPos';
 
 const {Navigator, Screen} = createBottomTabNavigator();
 
@@ -18,7 +18,11 @@ const AppTabRoutesHome: FC = () => {
         name="Quotes"
         component={Quotes}
         options={{
-          tabBarIcon: () => <HomeIcon name="home" size={30}/>,
+          tabBarIcon: ({focused}) => {
+            return (
+              <HomeIcon name="home" size={30} color={focused ? colors.primary : colors.graydark}/>
+            )
+          },
           headerShown: false,
         }}
       />
@@ -26,7 +30,11 @@ const AppTabRoutesHome: FC = () => {
         name="Buy"
         component={Buy}
         options={{
-          tabBarIcon: () => <HomeIcon name="home" size={30}/>,
+          tabBarIcon: ({focused}) => {
+            return (
+              <HomeIcon name="home" size={30} color={focused ? colors.primary : colors.graydark}/>
+            )
+          },
           headerShown: false,
         }}
       />
@@ -34,7 +42,11 @@ const AppTabRoutesHome: FC = () => {
         name="Sell"
         component={Sell}
         options={{
-          tabBarIcon: () => <HomeIcon name="home" size={30}/>,
+          tabBarIcon: ({focused}) => {
+            return (
+              <HomeIcon name="home" size={30} color={focused ? colors.primary : colors.graydark}/>
+            )
+          },
           headerShown: false,
         }}
       />
@@ -42,7 +54,11 @@ const AppTabRoutesHome: FC = () => {
         name="Bal And Pos"
         component={BalAndPos}
         options={{
-          tabBarIcon: () => <HomeIcon name="home" size={30}/>,
+          tabBarIcon: ({focused}) => {
+            return (
+              <HomeIcon name="home" size={30} color={focused ? colors.primary : colors.graydark}/>
+            )
+          },
           headerShown: false,
         }}
       />
@@ -50,7 +66,11 @@ const AppTabRoutesHome: FC = () => {
         name="Home"
         component={Home}
         options={{
-          tabBarIcon: () => <HomeIcon name="home" size={30}/>,
+          tabBarIcon: ({focused}) => {
+            return (
+              <HomeIcon name="home" size={30} color={focused ? colors.primary : colors.graydark}/>
+            )
+          },
           headerShown: false,
         }}
       />

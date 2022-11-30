@@ -1,19 +1,25 @@
 import React, {FC} from 'react';
-import { NavigationContainer, useTheme, DefaultTheme, DarkTheme } from '@react-navigation/native';
+import {
+  NavigationContainer,
+  useTheme,
+  DefaultTheme,
+  DarkTheme,
+} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import Welcome from '../screens/Welcome';
+import Welcome from '../screens/stackscreens/Welcome';
 // import {colors} from '../config/colors';
 import Profile from '../components/Header/Profile';
 
 import Avatar from '../assets/avi/avatar.png';
 import Greeting from '../components/Header/Greeting';
 import {CardProps} from '../components/Cards/types';
-import Balance from '../screens/Balance';
+import Balance from '../screens/stackscreens/Balance';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { useColorScheme } from 'react-native';
-import LoginPage from '../screens/LoginPage';
+import {useColorScheme} from 'react-native';
+import LoginPage from '../screens/stackscreens/LoginPage';
 import AppTabRoutesRegister from './Tab.routes.register';
 import AppTabRoutesHome from './Tab.routes.home';
+import DrawerHomeRoute from './Drawer.home';
 
 export type RootParamList = {
   Welcome: undefined;
@@ -21,17 +27,17 @@ export type RootParamList = {
   Balance: CardProps;
   LoginPage: undefined;
   RegisterPage: undefined;
+  Watchlist: undefined;
 };
-
 
 const {Navigator, Screen} = createStackNavigator<RootParamList>();
 
 const RootNavigation: FC = () => {
-  const { colors } = useTheme()
+  const {colors} = useTheme();
   const scheme = useColorScheme();
 
   return (
-    <NavigationContainer theme={scheme === 'dark' ? DarkTheme : DefaultTheme }>
+    <NavigationContainer theme={scheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Navigator
         screenOptions={{
           headerStyle: {
@@ -64,11 +70,33 @@ const RootNavigation: FC = () => {
           component={Welcome}
           options={{headerShown: false}}
         />
-        <Screen name='LoginPage' component={LoginPage} options={{headerShown: false}} />
-        <Screen name='RegisterPage' component={AppTabRoutesRegister} options={{headerShown: false}} />
+        <Screen
+          name="LoginPage"
+          component={LoginPage}
+          options={{headerShown: false}}
+        />
+        <Screen
+          name="RegisterPage"
+          component={AppTabRoutesRegister}
+          options={{headerShown: false}}
+        />
         <Screen
           name="Home"
           component={AppTabRoutesHome}
+          options={{
+            headerTitle: props => (
+              <Greeting
+                mainText="Hello Guest"
+                subText="Welcome Back"
+                {...props}
+              />
+            ),
+            headerLeft: () => null,
+          }}
+        />
+        <Screen
+          name="Watchlist"
+          component={DrawerHomeRoute}
           options={{
             headerTitle: props => (
               <Greeting

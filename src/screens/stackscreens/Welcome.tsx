@@ -1,16 +1,16 @@
 import React, {FC} from 'react';
 import styled from 'styled-components/native';
-import {Container} from '../components/shared';
-import {colors} from '../config/colors';
-import BigText from '../components/Texts/BigText';
+import {Container} from '../../components/shared';
+import {colors} from '../../config/colors';
+import BigText from '../../components/Texts/BigText';
 
-import background from '../assets/bgs/background_v1.png';
-import logo from '../assets/e-wallet-logo.png';
+import background from '../../assets/bgs/background_v1.png';
+import logo from '../../assets/e-wallet-logo.png';
 
-import RegularText from '../components/Texts/RegularText';
-import RegularButton from '../components/Buttons/RegularButton';
+import RegularText from '../../components/Texts/RegularText';
+import RegularButton from '../../components/Buttons/RegularButton';
 import {StackScreenProps} from '@react-navigation/stack';
-import {RootParamList} from '../navigation/RootNavigation';
+import {RootParamList} from '../../navigation/RootNavigation';
 import {View} from 'react-native';
 
 type Props = StackScreenProps<RootParamList, 'Welcome'>;
@@ -63,7 +63,6 @@ const Welcome: FC<Props> = ({navigation}) => {
             flexDirection: 'row',
             justifyContent: 'flex-start',
             width: '100%',
-            
           }}>
           <BigText textStyles={{marginBottom: 25, width: '50%'}}>
             Best way to track your money.

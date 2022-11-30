@@ -11,11 +11,13 @@
   },
   "dependencies": {
     "@react-navigation/bottom-tabs": "^6.4.1",
+    "@react-navigation/drawer": "^6.5.3",
     "@react-navigation/native": "^6.0.14",
     "@react-navigation/native-stack": "^6.9.2",
     "@react-navigation/stack": "^6.3.5",
     "d3-scale": "^4.0.2",
     "date-fns": "^2.29.3",
+    "jetifier": "^2.0.0",
     "react": "18.0.0",
     "react-native": "0.69.5",
     "react-native-animated-numbers": "^0.4.1",
@@ -68,5 +70,9 @@
       "json",
       "node"
     ]
+  },
+  "resolutions": {
+    "react-native-gesture-handler": "^2.8.0"
   }
+
 }

@@ -1,21 +1,21 @@
 import React, {FC} from 'react';
 import styled from 'styled-components/native';
-import { colors } from '../../config/colors';
+import { colors } from '../../../config/colors';
 import { Text } from 'react-native';
 
-const SellContainer = styled.ScrollView`
+const BuyContainer = styled.ScrollView`
     flex: 1;
     background-color: ${colors.graylight};
 `;
 
-const Sell: FC = () => {
+const Buy: FC = () => {
     return (
-        <SellContainer>
+        <BuyContainer>
             <Text>
-                Sell Page
+                Buy Page
             </Text>
-        </SellContainer>
+        </BuyContainer>
     )
 }
 
-export default Sell;
+export default Buy;

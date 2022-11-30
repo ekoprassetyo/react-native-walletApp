@@ -1,14 +1,14 @@
 import React, {FC, useState} from 'react';
 import styled from 'styled-components/native';
-import {colors} from '../config/colors';
+import {colors} from '../../config/colors';
 import login from '../assets/loginImage.png';
-import login2 from '../assets/auth/splash_logo.png';
-import RegularButton from '../components/Buttons/RegularButton';
-import SmallText from '../components/Texts/SmallText';
+import login2 from '../../assets/auth/splash_logo.png';
+import RegularButton from '../../components/Buttons/RegularButton';
+import SmallText from '../../components/Texts/SmallText';
 import {useNavigation} from '@react-navigation/native';
 import {Props as HomeProps} from '../tabscreens/Menu/Home';
 import {TouchableOpacity} from 'react-native-gesture-handler';
-import BigText from '../components/Texts/BigText';
+import BigText from '../../components/Texts/BigText';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const LoginPageBackground = styled.View`

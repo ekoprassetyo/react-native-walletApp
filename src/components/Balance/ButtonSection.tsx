@@ -4,7 +4,7 @@ import RegularButton from '../Buttons/RegularButton';
 import { colors } from '../../config/colors';
 import Icon from 'react-native-vector-icons/Ionicons'
 import { useNavigation } from '@react-navigation/native';
-import { Props as BalanceProps } from '../../screens/Balance';
+import { Props as BalanceProps } from '../../screens/stackscreens/Balance';
 
 
 const ButtonSectionBackground = styled.View`

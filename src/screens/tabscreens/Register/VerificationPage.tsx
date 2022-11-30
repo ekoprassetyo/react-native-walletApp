@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import styled from 'styled-components/native';
-import {colors} from '../../config/colors';
-import register from '../../assets/regisImage.png';
+import {colors} from '../../../config/colors';
+import register from '../../../assets/regisImage.png';
 
 const VerificationPageBackground = styled.View`
     background-color: ${colors.graylight}
