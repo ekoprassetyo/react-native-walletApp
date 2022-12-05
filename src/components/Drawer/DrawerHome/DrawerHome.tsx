@@ -31,11 +31,17 @@ const DrawerHome: FC<CustomDrawerProps> = ({navigation, state}) => {
               flexDirection: 'row',
               alignItems: 'center',
               paddingHorizontal: 10,
-              paddingVertical: 10,
+              paddingVertical: 8,
               borderRadius: 5,
-              backgroundColor: state?.index === index ? colors.graylight : colors.white,
+              backgroundColor:
+                state?.index === index ? colors.graylight : colors.white,
             }}>
-            <Icon name={item?.icon} size={25} color={colors.gray} />
+            <Icon
+              name={item?.icon}
+              size={25}
+              color={colors.gray}
+              style={{marginEnd: 10}}
+            />
             <RegularText bold textStyles={{marginLeft: 10, fontSize: 16}}>
               {item?.link}
             </RegularText>

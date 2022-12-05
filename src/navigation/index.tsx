@@ -7,7 +7,7 @@ import StackNavigation from './StackNavigation';
 const Routes: FC = () => {
     return (
         <NavigationContainer >
-            <StackNavigation />
+            <DrawerHomeNavigation />
         </NavigationContainer>
     );
 }

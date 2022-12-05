@@ -31,6 +31,7 @@ export interface StockObjInfo {
   timezone: string;
   type: string;
   price: string;
+  [propName: string]: any; // string index signature - allow us to have extra properties
 }
 
 export interface BestMatchesInfo {
@@ -41,3 +42,5 @@ export interface BestMatchesInfo {
 export interface RenderItemProps {
   item: string;
 }
+
+export interface SearchBarProps {}

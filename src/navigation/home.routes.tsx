@@ -5,6 +5,7 @@ import Quotes from '../screens/tabscreens/Menu/Quotes';
 import AppTabRoutesHome from './Tab.routes.home';
 import HomeContent from '../components/Drawer/DrawerMenu/Home';
 import StackNavigation from './StackNavigation';
+import DrawerHome from '../components/Drawer/DrawerHome/DrawerHome';
 
 const {Navigator, Screen} = createDrawerNavigator();
 
@@ -13,16 +14,25 @@ const DrawerHomeNavigation = () => {
     <Navigator
       id="DrawerHome"
       screenOptions={{
-        headerStyle: {
-          backgroundColor: colors.codGrey,
-        },
-        headerTintColor: colors.accent,
-        headerTitleStyle: {
-          fontWeight: 'bold',
-        },
+        headerShown: false
+        // headerStyle: {
+        //   backgroundColor: colors.graylight,
+        // },
+        // headerTintColor: colors.accent,
+        // headerTitleStyle: {
+        //   fontWeight: 'bold',
+        // },
       }}
-      drawerContent={ () => <HomeContent  />}>
-      <Screen name="HomeDrawer" component= {StackNavigation} />
+      drawerContent={props => <DrawerHome {...props} />}>
+      <Screen
+        name="HomeDrawer"
+        component={StackNavigation}
+        options={{
+          drawerLabel: () => null,
+          drawerItemStyle: {display: 'none'},
+          drawerIcon: () => null,
+        }}
+      />
     </Navigator>
   );
 };

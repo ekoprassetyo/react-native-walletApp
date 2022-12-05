@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import styled from 'styled-components/native';
 import {colors} from '../../../config/colors';
-import {Text} from 'react-native';
+import { Text, View } from 'react-native';
 import {
   Area,
   Chart,
@@ -9,6 +9,10 @@ import {
   Line,
   VerticalAxis,
 } from 'react-native-responsive-linechart';
+import { AreaChart, Grid, XAxis } from 'react-native-svg-charts';
+import * as scale from 'd3-scale';
+import * as shape from 'd3-shape'
+import * as dateFns from 'date-fns';
 
 const QuotesContainer = styled.ScrollView`
   flex: 1;
@@ -16,52 +20,67 @@ const QuotesContainer = styled.ScrollView`
 `;
 
 const Quotes: FC = () => {
-  return (
-    <QuotesContainer>
-      <Chart
-        style={{height: 200, width: 400}}
-        data={[
-          {x: -2, y: 3},
-          {x: -1, y: 6},
-          {x: 0, y: 9},
-          {x: 1, y: 12},
-          {x: 2, y: 14},
-          {x: 3, y: 16},
-          {x: 4, y: 1},
-          {x: 5, y: 8},
-          {x: 6, y: 12},
-          {x: 7, y: 14},
-          {x: 8, y: 12},
-          {x: 9, y: 13.5},
-          {x: 10, y: 22},
-        ]}
-        padding={{left: 40, bottom: 20, right: 20, top: 20}}
-        xDomain={{min: -2, max: 10}}
-        yDomain={{min: 0, max: 20}}
+  const data = [
+    {
+        value: 50,
+        date: dateFns.setHours(new Date(2022, 0, 0), 6),
+    },
+    {
+        value: 10,
+        date: dateFns.setHours(new Date(2022, 0, 0), 9),
+    },
+    {
+        value: 150,
+        date: dateFns.setHours(new Date(2022, 0, 0), 15),
+    },
+    {
+        value: 10,
+        date: dateFns.setHours(new Date(2022, 0, 0), 18),
+    },
+    {
+        value: 100,
+        date: dateFns.setHours(new Date(2022, 0, 0), 21),
+    },
+    {
+        value: 20,
+        date: dateFns.setHours(new Date(2022, 0, 0), 24),
+    },
+]
+
+return (
+    <View style={{ height: 200, padding: 20 }}>
+        <AreaChart
+            style={{ flex: 1 }}
+            data={ data }
+            yAccessor={ ({ item }) => item.value }
+            //@ts-ignore
+            xAccessor={ ({ item }) => item.date }
+            xScale={ scale.scaleTime }
+            contentInset={{ top: 10, bottom: 10 }}
+            svg={{ fill: 'rgba(134, 134, 244, 0.5)' }}
+            curve={ shape.curveLinear }
         >
-          
-        <VerticalAxis
-          tickCount={11}
-          theme={{labels: {formatter: v => v.toFixed(2)}}}
+            <Grid/>
+        </AreaChart>
+        <XAxis
+            data={ data }
+            svg={{
+                fill: 'black',
+                fontSize: 8,
+                fontWeight: 'bold',
+                rotation: 20,
+                originY: 30,
+                y: 5,
+            }}
+            xAccessor={ ({ item }) => item.date }
+            scale={ scale.scaleTime }
+            numberOfTicks={ 6 }
+            style={{ marginHorizontal: -15, height: 20 }}
+            contentInset={{ left: 10, right: 25 }}
+            formatLabel={ (value) => dateFns.format(value, 'MM/dd') }
         />
-        <HorizontalAxis tickCount={5} />
-        <Area
-          theme={{
-            gradient: {
-              from: {color: '#ffa502'},
-              to: {color: '#ffa502', opacity: 0.4},
-            },
-          }}
-        />
-        <Line
-          theme={{
-            stroke: {color: '#ffa502', width: 5},
-            scatter: {default: {width: 4, height: 4, rx: 2}},
-          }}
-        />
-      </Chart>
-    </QuotesContainer>
-  );
+    </View>
+)
 };
 
 export default Quotes;

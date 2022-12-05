@@ -10,6 +10,7 @@ export const colors = {
   red: '#E74C3C',
   green: '#47c466',
   codGrey: '#1D1D1D',
+  smokeGrey: '#7C8484',
 };
 
 export const darkTheme = {
